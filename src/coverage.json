@@ -1,0 +1,79 @@
+{
+  "kind": "coverage_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-15T18:54:18.469Z",
+  "sources": {
+    "buildRequest": true,
+    "implementationPlan": true
+  },
+  "requirements": {
+    "total": 3,
+    "implemented": 3,
+    "items": [
+      {
+        "id": "REQ-21",
+        "summary": "Add multiple new static image assets for the Hospital Furniture category and the Laboratory Setup category under frontend/public/assets/generated, and ensure each image has appropriate English alt text available for rendering in the UI.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/public/assets/generated/hospital-furniture-bedroom.dim_1200x800.jpg",
+          "frontend/public/assets/generated/hospital-furniture-exam-room.dim_1200x800.jpg",
+          "frontend/public/assets/generated/hospital-furniture-medical-cart.dim_1200x800.jpg",
+          "frontend/public/assets/generated/laboratory-setup-bench.dim_1200x800.jpg",
+          "frontend/public/assets/generated/laboratory-setup-analyzer.dim_1200x800.jpg",
+          "frontend/src/content/productGalleries.ts"
+        ],
+        "matchedFiles": [
+          "frontend/public/assets/generated/hospital-furniture-bedroom.dim_1200x800.jpg",
+          "frontend/public/assets/generated/hospital-furniture-exam-room.dim_1200x800.jpg",
+          "frontend/public/assets/generated/hospital-furniture-medical-cart.dim_1200x800.jpg",
+          "frontend/public/assets/generated/laboratory-setup-bench.dim_1200x800.jpg",
+          "frontend/public/assets/generated/laboratory-setup-analyzer.dim_1200x800.jpg",
+          "frontend/src/content/productGalleries.ts"
+        ]
+      },
+      {
+        "id": "REQ-22",
+        "summary": "Update the product categories data so the Hospital Furniture category card displays a photo (similar to ICU Setup, OT Setup, and Laboratory Setup), using one of the newly added Hospital Furniture images and a descriptive English alt text.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/content/categories.ts"
+        ],
+        "matchedFiles": [
+          "frontend/src/content/categories.ts"
+        ]
+      },
+      {
+        "id": "REQ-23",
+        "summary": "Add dedicated sections on the Products page for Hospital Furniture and for Laboratory Setup that each display a small responsive gallery (multiple images) using the newly added static assets, keeping styling consistent with existing ICU/OT detail sections and ensuring the layout works on mobile and desktop.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/components/ImageGallery.tsx",
+          "frontend/src/pages/ProductsPage.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/components/ImageGallery.tsx",
+          "frontend/src/pages/ProductsPage.tsx"
+        ]
+      }
+    ]
+  },
+  "changedFiles": [
+    "build-request.json",
+    "feature_evidence.json",
+    "frontend-file-summaries.txt",
+    "frontend-implementation-plan.json",
+    "frontend/public/assets/generated/hospital-furniture-bedroom.dim_1200x800.jpg",
+    "frontend/public/assets/generated/hospital-furniture-exam-room.dim_1200x800.jpg",
+    "frontend/public/assets/generated/hospital-furniture-medical-cart.dim_1200x800.jpg",
+    "frontend/public/assets/generated/laboratory-setup-analyzer.dim_1200x800.jpg",
+    "frontend/public/assets/generated/laboratory-setup-bench.dim_1200x800.jpg",
+    "frontend/src/components/ImageGallery.tsx",
+    "frontend/src/content/categories.ts",
+    "frontend/src/content/productGalleries.ts",
+    "frontend/src/pages/ProductsPage.tsx",
+    "project_state.json",
+    "scratch/component-selection.json",
+    "spec.md",
+    "spec_vs_diff_report.json"
+  ]
+}

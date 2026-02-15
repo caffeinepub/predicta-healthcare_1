@@ -1,0 +1,27 @@
+{
+  "kind": "spec_vs_diff_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-15T18:54:18.466Z",
+  "summary": "REQ-22 and the content/alt-text portion of REQ-21 appear implemented via updates to categories data and a new content module for galleries. REQ-23 appears implemented by adding an ImageGallery component and wiring new Hospital Furniture and Laboratory Setup gallery sections into ProductsPage. However, the diff summary does not show the required static image files being added under frontend/public/assets/generated with the exact filenames, so the asset-addition part of REQ-21 is not evidenced.",
+  "missing_requirements": [
+    {
+      "id": "REQ-21",
+      "requirement": "Add multiple new static image assets for Hospital Furniture and Laboratory Setup under frontend/public/assets/generated using the exact specified filenames.",
+      "reason": "The diff summary includes new TS/TSX files that reference the images, but it does not show any new .jpg assets added under frontend/public/assets/generated. Without those files being added, the acceptance criterion about adding the exact filenames is not demonstrated.",
+      "evidence": [
+        "frontend/src/content/productGalleries.ts (references /assets/generated/hospital-furniture-*.jpg and /assets/generated/laboratory-setup-*.jpg)",
+        "frontend/src/content/categories.ts (references /assets/generated/hospital-furniture-bedroom.dim_1200x800.jpg and /assets/generated/laboratory-setup-bench.dim_1200x800.jpg)"
+      ]
+    }
+  ],
+  "hallucinated_features": [],
+  "confidence": 0.72,
+  "changed_files": [
+    "frontend-file-summaries.txt",
+    "frontend/src/components/ImageGallery.tsx",
+    "frontend/src/content/categories.ts",
+    "frontend/src/content/productGalleries.ts",
+    "frontend/src/pages/ProductsPage.tsx",
+    "project_state.json"
+  ]
+}

@@ -1,0 +1,116 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --radius: 0.75rem;
+        
+        /* Healthcare-inspired teal/green palette */
+        --background: 0.99 0 0;
+        --foreground: 0.15 0 0;
+        
+        --card: 1 0 0;
+        --card-foreground: 0.15 0 0;
+        
+        --popover: 1 0 0;
+        --popover-foreground: 0.15 0 0;
+        
+        /* Primary: Clinical teal */
+        --primary: 0.55 0.12 190;
+        --primary-foreground: 0.99 0 0;
+        
+        /* Secondary: Soft sage */
+        --secondary: 0.95 0.02 160;
+        --secondary-foreground: 0.20 0 0;
+        
+        --muted: 0.96 0.01 180;
+        --muted-foreground: 0.50 0.02 180;
+        
+        /* Accent: Fresh mint */
+        --accent: 0.92 0.04 170;
+        --accent-foreground: 0.25 0.05 180;
+        
+        --destructive: 0.58 0.24 25;
+        --destructive-foreground: 0.99 0 0;
+        
+        --border: 0.90 0.01 180;
+        --input: 0.90 0.01 180;
+        --ring: 0.55 0.12 190;
+        
+        --chart-1: 0.65 0.15 180;
+        --chart-2: 0.60 0.12 200;
+        --chart-3: 0.70 0.10 160;
+        --chart-4: 0.55 0.18 210;
+        --chart-5: 0.75 0.14 170;
+    }
+
+    .dark {
+        --background: 0.12 0.01 200;
+        --foreground: 0.98 0.01 180;
+        
+        --card: 0.18 0.02 195;
+        --card-foreground: 0.98 0.01 180;
+        
+        --popover: 0.15 0.02 195;
+        --popover-foreground: 0.98 0.01 180;
+        
+        /* Primary: Bright clinical teal */
+        --primary: 0.70 0.15 185;
+        --primary-foreground: 0.12 0.01 200;
+        
+        --secondary: 0.25 0.03 180;
+        --secondary-foreground: 0.98 0.01 180;
+        
+        --muted: 0.22 0.02 190;
+        --muted-foreground: 0.65 0.03 185;
+        
+        --accent: 0.30 0.05 175;
+        --accent-foreground: 0.98 0.01 180;
+        
+        --destructive: 0.65 0.22 25;
+        --destructive-foreground: 0.12 0.01 200;
+        
+        --border: 1 0 0 / 12%;
+        --input: 1 0 0 / 15%;
+        --ring: 0.70 0.15 185;
+        
+        --chart-1: 0.70 0.15 185;
+        --chart-2: 0.65 0.12 200;
+        --chart-3: 0.75 0.10 165;
+        --chart-4: 0.60 0.18 210;
+        --chart-5: 0.80 0.14 175;
+    }
+
+    * {
+        @apply border-border;
+    }
+    
+    body {
+        @apply bg-background text-foreground;
+        font-feature-settings: "rlig" 1, "calt" 1;
+    }
+    
+    html {
+        scroll-behavior: smooth;
+    }
+}
+
+@layer components {
+    /* Typography enhancements */
+    h1, h2, h3, h4, h5, h6 {
+        @apply font-semibold tracking-tight;
+    }
+    
+    h1 {
+        @apply text-4xl md:text-5xl lg:text-6xl;
+    }
+    
+    h2 {
+        @apply text-3xl md:text-4xl;
+    }
+    
+    h3 {
+        @apply text-2xl md:text-3xl;
+    }
+}

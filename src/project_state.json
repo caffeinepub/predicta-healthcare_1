@@ -1,0 +1,266 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 15,
+  "summary": "Build a multi-page marketing website for \"Predicta Healthcare\" (healthcare products focused on ICU/OT setup and hospital furniture), using the logo and matching its colors, and displaying provided contact details.",
+  "architectural_notes": [
+    "Website should use the provided logo and match its color palette across the UI.",
+    "Include contact details prominently (phone, email, address) on relevant pages (e.g., header/footer and Contact section).",
+    "User confirmed the site should be a multi-page website (Home, Products/Categories, About, Contact) rather than a single-page layout.",
+    "ICU Setup content should include a representative photo plus a structured list of equipment, furniture, and ICU wall/construction requirements.",
+    "OT Setup content should include an image plus a short structured list of key items (AHU as per customer requirement, ducting wall, OT light, OT table)."
+  ],
+  "known_issues": [
+    "Logo file not actually provided in the conversation thread; needed to extract colors and use in the website.",
+    "ICU Setup photo asset was referenced as 'attached' but is not available in the project conversation/thread yet.",
+    "OT Setup image asset referenced as 'this image' but not available in the project conversation/thread yet.",
+    "Build/deploy is currently blocked by internal/system configuration errors encountered during attempted rebuilds."
+  ],
+  "isFixRequest": false,
+  "imageRequirements": "## Required Images\n- Hospital bed in a clean patient room with side rails and bedside table (hospital-furniture-bedroom.dim_1200x800.jpg)\n- Clinical examination room with an examination table and storage cabinets (hospital-furniture-exam-room.dim_1200x800.jpg)\n- Medical trolley/cart and modular storage furniture in a hospital corridor setting (hospital-furniture-medical-cart.dim_1200x800.jpg)\n- Modern laboratory bench with instruments, shelves, and organized glassware (laboratory-setup-bench.dim_1200x800.jpg)\n- Close-up of diagnostic lab analyzer equipment in a bright lab environment (laboratory-setup-analyzer.dim_1200x800.jpg)",
+  "existing_features": [
+    {
+      "id": "feature-create-a-responsive-marketing-website-for-the-brand-name-predicta-healthcare-focused-on-healthcare-products-especially-icu-ot-setup-and-hospital-furniture",
+      "title": "Create a responsive marketing website for the brand name \"Predicta Healthcare\" focused on healthcare products, especially ICU/OT setup and hospital furniture.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-core-pages-sections-suitable-for-a-small-healthcare-products-company-home-products-categories-about-and-contact-ensure-navigation-links-work-and-clearly-indicate-the-current-section",
+      "title": "Add core pages/sections suitable for a small healthcare products company: Home, Products/Categories, About, and Contact; ensure navigation links work and clearly indicate the current section.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-use-the-provided-logo-when-available-as-the-site-logo-and-match-the-site-color-palette-to-the-logo-colors-until-the-logo-file-is-available-in-the-project-implement-the-palette-via-a-centralized-theme-configuration-so-replacing-the-logo-later-updates-branding-with-minimal-code-change",
+      "title": "Use the provided logo (when available) as the site logo and match the site color palette to the logo colors; until the logo file is available in the project, implement the palette via a centralized theme configuration so replacing the logo later updates branding with minimal code change.",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-display-the-provided-contact-details-prominently-on-the-contact-page-section-and-in-the-site-footer-phone-7016390948-email-predictahealthcare-gmail-com-address-nikol-ahmedabad-382350",
+      "title": "Display the provided contact details prominently on the Contact page/section and in the site footer: Phone: 7016390948; Email: predictahealthcare@gmail.com; Address: Nikol, Ahmedabad - 382350.",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-coherent-professional-visual-theme-appropriate-for-healthcare-equipment-and-hospital-infrastructure-avoid-blue-purple-unless-the-logo-requires-it-applying-consistent-typography-spacing-and-component-styling-across-all-pages",
+      "title": "Create a coherent, professional visual theme appropriate for healthcare equipment and hospital infrastructure (avoid blue/purple unless the logo requires it), applying consistent typography, spacing, and component styling across all pages.",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-products-categories-section-that-highlights-at-least-these-categories-with-short-descriptions-icu-setup-ot-setup-hospital-furniture-include-a-simple-clean-card-grid-layout",
+      "title": "Add a Products/Categories section that highlights at least these categories with short descriptions: ICU Setup, OT Setup, Hospital Furniture; include a simple, clean card/grid layout.",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-static-marketing-content-on-the-home-page-a-hero-section-with-a-headline-subheadline-and-primary-call-to-action-button-that-links-to-the-contact-section-page",
+      "title": "Add static marketing content on the Home page: a hero section with a headline, subheadline, and primary call-to-action button that links to the Contact section/page.",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-generated-static-images-to-the-project-and-render-them-from-the-frontend-as-static-assets-under-frontend-public-assets-generated-do-not-serve-images-from-the-backend",
+      "title": "Add generated static images to the project and render them from the frontend as static assets under frontend/public/assets/generated (do not serve images from the backend).",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-convert-the-current-single-page-scroll-based-layout-into-a-true-multi-page-website-with-separate-routes-pages-for-home-products-about-and-contact",
+      "title": "Convert the current single-page, scroll-based layout into a true multi-page website with separate routes/pages for Home, Products, About, and Contact.",
+      "reqIds": [
+        "REQ-9"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-site-navigation-header-and-footer-to-use-route-navigation-between-pages-instead-of-scrolling-to-on-page-section-ids-and-clearly-indicate-the-currently-active-page-in-the-navigation-ui-on-both-desktop-and-mobile",
+      "title": "Update the site navigation (Header and Footer) to use route navigation between pages (instead of scrolling to on-page section IDs), and clearly indicate the currently active page in the navigation UI on both desktop and mobile.",
+      "reqIds": [
+        "REQ-10"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-in-page-calls-to-action-that-currently-scroll-to-sections-so-they-work-correctly-in-a-multi-page-setup-e-g-the-hero-get-started-action-should-navigate-to-the-contact-page",
+      "title": "Update in-page calls-to-action that currently scroll to sections so they work correctly in a multi-page setup (e.g., the Hero \"Get Started\" action should navigate to the Contact page).",
+      "reqIds": [
+        "REQ-11"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-new-product-category-named-laboratory-setup-to-the-product-categories-list-so-it-appears-alongside-icu-setup-ot-setup-and-hospital-furniture-on-the-products-page",
+      "title": "Add a new product category named \"Laboratory Setup\" to the product categories list so it appears alongside ICU Setup, OT Setup, and Hospital Furniture on the Products page.",
+      "reqIds": [
+        "REQ-12"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-new-static-icon-image-asset-for-the-laboratory-setup-category-and-reference-it-from-the-category-data",
+      "title": "Add a new static icon image asset for the \"Laboratory Setup\" category and reference it from the category data.",
+      "reqIds": [
+        "REQ-13"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-the-user-uploaded-icu-photo-to-the-project-as-a-static-frontend-asset-under-frontend-public-assets-generated-and-reference-it-from-the-icu-setup-content",
+      "title": "Add the user-uploaded ICU photo to the project as a static frontend asset under frontend/public/assets/generated, and reference it from the ICU Setup content.",
+      "reqIds": [
+        "REQ-14"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-products-page-ui-so-the-icu-setup-category-displays-the-added-icu-photo-in-addition-to-its-existing-icon-title-description-without-breaking-the-layout-for-ot-setup-hospital-furniture-and-laboratory-setup",
+      "title": "Update the Products page UI so the ICU Setup category displays the added ICU photo in addition to its existing icon/title/description (without breaking the layout for OT Setup, Hospital Furniture, and Laboratory Setup).",
+      "reqIds": [
+        "REQ-15"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-an-icu-setup-details-section-on-the-products-page-that-lists-icu-requirements-grouped-into-three-headings-equipment-furniture-and-wall-construction-english-text",
+      "title": "Add an ICU Setup details section on the Products page that lists ICU requirements grouped into three headings: Equipment, Furniture, and Wall/Construction (English text).",
+      "reqIds": [
+        "REQ-16"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-the-user-uploaded-ot-setup-photo-1000795149-jpg-to-the-project-as-a-static-frontend-asset-under-frontend-public-assets-generated-and-reference-it-from-the-ot-setup-category-so-it-displays-as-the-category-photo-in-the-products-grid-similar-to-icu-setup",
+      "title": "Add the user-uploaded OT Setup photo (1000795149.jpg) to the project as a static frontend asset under frontend/public/assets/generated, and reference it from the OT Setup category so it displays as the category photo in the Products grid (similar to ICU Setup).",
+      "reqIds": [
+        "REQ-17"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-an-ot-setup-details-section-on-the-products-page-that-lists-the-ot-requirements-as-a-short-english-bullet-list-containing-ahu-as-per-customer-requirement-ducting-wall-ot-light-and-ot-table",
+      "title": "Add an OT Setup details section on the Products page that lists the OT requirements as a short English bullet list containing: “AHU as per customer requirement”, “Ducting wall”, “OT light”, and “OT table”.",
+      "reqIds": [
+        "REQ-18"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-laboratory-setup-category-data-so-the-laboratory-setup-card-displays-the-uploaded-laboratory-image-images-jpeg-as-its-category-photo-with-appropriate-english-alt-text",
+      "title": "Update the Laboratory Setup category data so the Laboratory Setup card displays the uploaded laboratory image (images.jpeg) as its category photo, with appropriate English alt text.",
+      "reqIds": [
+        "REQ-20"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-multiple-new-static-image-assets-for-the-hospital-furniture-category-and-the-laboratory-setup-category-under-frontend-public-assets-generated-and-ensure-each-image-has-appropriate-english-alt-text-available-for-rendering-in-the-ui",
+      "title": "Add multiple new static image assets for the Hospital Furniture category and the Laboratory Setup category under frontend/public/assets/generated, and ensure each image has appropriate English alt text available for rendering in the UI.",
+      "reqIds": [
+        "REQ-21"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-product-categories-data-so-the-hospital-furniture-category-card-displays-a-photo-similar-to-icu-setup-ot-setup-and-laboratory-setup-using-one-of-the-newly-added-hospital-furniture-images-and-a-descriptive-english-alt-text",
+      "title": "Update the product categories data so the Hospital Furniture category card displays a photo (similar to ICU Setup, OT Setup, and Laboratory Setup), using one of the newly added Hospital Furniture images and a descriptive English alt text.",
+      "reqIds": [
+        "REQ-22"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-dedicated-sections-on-the-products-page-for-hospital-furniture-and-for-laboratory-setup-that-each-display-a-small-responsive-gallery-multiple-images-using-the-newly-added-static-assets-keeping-styling-consistent-with-existing-icu-ot-detail-sections-and-ensuring-the-layout-works-on-mobile-and-desktop",
+      "title": "Add dedicated sections on the Products page for Hospital Furniture and for Laboratory Setup that each display a small responsive gallery (multiple images) using the newly added static assets, keeping styling consistent with existing ICU/OT detail sections and ensuring the layout works on mobile and desktop.",
+      "reqIds": [
+        "REQ-23"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Create \"Predicta Healthcare\" website for healthcare products (ICU/OT setup, hospital furniture) using logo-based color theme and showing contact details.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Add \"Laboratory Setup\" as an additional category under the Products/Categories list (alongside ICU Setup, OT Setup, Hospital Furniture).",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Add the user-provided/attached photo to the ICU Setup category/section (e.g., on the Products page/category detail for ICU Setup).",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "Add an ICU Setup details list describing required items: equipment, furniture, and wall/construction requirements for ICU setup.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-5",
+      "summary": "Add the provided/attached image to the OT Setup section/category (e.g., on the Products page).",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-6",
+      "summary": "Add an OT Setup details list/mention including: AHU as per customer requirement, ducting wall, OT light, and OT table.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-7",
+      "summary": "Add the same provided image to the Hospital Furniture section and include a list of required hospital furniture (specifically including beds).",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-8",
+      "summary": "Add the provided image to the Laboratory Setup section/category (e.g., on the Products page/category detail).",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-9",
+      "summary": "Add the user-uploaded images (1000795151.jpg and images.jpeg) to the frontend as static assets under frontend/public/assets/generated/ without serving them from the backend.",
+      "reqIds": [
+        "REQ-19"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-10",
+      "summary": "Add multiple images to the Hospital Furniture section(s) and the Laboratory Setup section (beyond the single category photo), e.g., additional section images/gallery content.",
+      "reqIds": [],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "Predicta Healthcare",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

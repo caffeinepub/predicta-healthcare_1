@@ -1,0 +1,84 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Add static product images and galleries for Hospital Furniture and Laboratory Setup",
+  "requirements": [
+    {
+      "id": "REQ-21",
+      "summary": "Add required generated static images and define reusable English alt text strings in frontend content data.",
+      "acceptanceCriteria": [
+        "New image files are added under frontend/public/assets/generated using the exact filenames specified in imageRequirements.required.",
+        "Each new image has an English alt text string defined in frontend content/data (not hardcoded only in JSX) so it can be used consistently in the UI."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/public/assets/generated/hospital-furniture-bedroom.dim_1200x800.jpg",
+          "operation": "create",
+          "description": "Add the generated static image asset: Hospital bed in a clean patient room with side rails and bedside table."
+        },
+        {
+          "path": "frontend/public/assets/generated/hospital-furniture-exam-room.dim_1200x800.jpg",
+          "operation": "create",
+          "description": "Add the generated static image asset: Clinical examination room with an examination table and storage cabinets."
+        },
+        {
+          "path": "frontend/public/assets/generated/hospital-furniture-medical-cart.dim_1200x800.jpg",
+          "operation": "create",
+          "description": "Add the generated static image asset: Medical trolley/cart and modular storage furniture in a hospital corridor setting."
+        },
+        {
+          "path": "frontend/public/assets/generated/laboratory-setup-bench.dim_1200x800.jpg",
+          "operation": "create",
+          "description": "Add the generated static image asset: Modern laboratory bench with instruments, shelves, and organized glassware."
+        },
+        {
+          "path": "frontend/public/assets/generated/laboratory-setup-analyzer.dim_1200x800.jpg",
+          "operation": "create",
+          "description": "Add the generated static image asset: Close-up of diagnostic lab analyzer equipment in a bright lab environment."
+        },
+        {
+          "path": "frontend/src/content/productGalleries.ts",
+          "operation": "create",
+          "description": "Create a content module that exports Hospital Furniture and Laboratory Setup gallery image entries (static /assets/generated/... src + meaningful English alt text) so alt text is managed in data rather than only inline in JSX."
+        }
+      ]
+    },
+    {
+      "id": "REQ-22",
+      "summary": "Update the Hospital Furniture category data to include a card photo and descriptive English alt text.",
+      "acceptanceCriteria": [
+        "frontend/src/content/categories.ts includes a photo and photoAlt for the category with id 'furniture'.",
+        "On the Products page category grid, the Hospital Furniture card renders its photo at the top (using the existing CategoryCard behavior) without breaking the layout for the other categories."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/content/categories.ts",
+          "operation": "modify",
+          "description": "Add photo and photoAlt to the 'furniture' category using one of the new Hospital Furniture images (e.g., /assets/generated/hospital-furniture-bedroom.dim_1200x800.jpg) with a descriptive English alt text. (Optional tidy-up: align the Laboratory Setup card photo to one of the new laboratory images if needed, while keeping structure unchanged.)"
+        }
+      ]
+    },
+    {
+      "id": "REQ-23",
+      "summary": "Add responsive image gallery sections for Hospital Furniture and Laboratory Setup on the Products page using new static assets and content-defined alt text.",
+      "acceptanceCriteria": [
+        "frontend/src/pages/ProductsPage.tsx includes a \"Hospital Furniture\" section containing a responsive image grid/gallery that renders at least 3 Hospital Furniture images from frontend/public/assets/generated.",
+        "frontend/src/pages/ProductsPage.tsx includes a \"Laboratory Setup\" section containing a responsive image grid/gallery that renders at least 2 Laboratory Setup images from frontend/public/assets/generated (in addition to the existing Laboratory Setup category card photo).",
+        "All images rendered in these galleries include meaningful English alt text.",
+        "No images are served from the backend; all new images are referenced via /assets/generated/... paths."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/ImageGallery.tsx",
+          "operation": "create",
+          "description": "Create a small presentational ImageGallery component that renders a responsive grid of static images (src + alt) with styling consistent with existing Products page sections; ensure it accepts data entries from content modules and does not hardcode alt text."
+        },
+        {
+          "path": "frontend/src/pages/ProductsPage.tsx",
+          "operation": "modify",
+          "description": "Import gallery data from frontend/src/content/productGalleries.ts and render two new sections (Hospital Furniture and Laboratory Setup) using Section + ImageGallery. Ensure Hospital Furniture shows at least 3 images and Laboratory Setup shows at least 2 images, all referenced via /assets/generated/... and with alt text sourced from content data; keep layout responsive for mobile and desktop and consistent with existing ICU/OT detail sections."
+        }
+      ]
+    }
+  ]
+}
