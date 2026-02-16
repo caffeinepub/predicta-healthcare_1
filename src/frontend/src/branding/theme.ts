@@ -1,6 +1,6 @@
 export const BRAND_NAME = 'Predicta Healthcare';
 
-export const LOGO_PATH = '/assets/predicta-logo.png';
+export const LOGO_PATH = '/assets/generated/1000795148-1.jpg';
 
 // Healthcare-appropriate color palette
 // Using clinical teal/green tones that convey trust, health, and professionalism

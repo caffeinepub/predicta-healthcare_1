@@ -1,80 +1,72 @@
 {
   "kind": "build_request",
-  "title": "Add additional images for Hospital Furniture and Laboratory Setup on Products page",
+  "title": "Add uploaded image as the site logo in the header",
   "priority": "normal",
   "requirements": [
     {
-      "id": "REQ-21",
-      "text": "Add multiple new static image assets for the Hospital Furniture category and the Laboratory Setup category under frontend/public/assets/generated, and ensure each image has appropriate English alt text available for rendering in the UI.",
+      "id": "REQ-24",
+      "text": "Add the user-uploaded image file (1000795148-1.jpg) to the frontend as a static asset under frontend/public/assets/generated/ and ensure it is available at runtime via the /assets/generated/ URL path.",
       "target": "frontend",
       "source": {
         "messageIds": [
           "msg-4"
         ],
         "quotes": [
-          "Add some images in hospital furniture sections and Laboratory Setup section"
+          "i want this image in to header"
         ]
       },
       "acceptanceCriteria": [
-        "New image files are added under frontend/public/assets/generated using the exact filenames specified in imageRequirements.required.",
-        "Each new image has an English alt text string defined in frontend content/data (not hardcoded only in JSX) so it can be used consistently in the UI."
+        "The file frontend/public/assets/generated/1000795148-1.jpg exists in the repo.",
+        "Loading /assets/generated/1000795148-1.jpg in the browser returns the image (no 404)."
       ]
     },
     {
-      "id": "REQ-22",
-      "text": "Update the product categories data so the Hospital Furniture category card displays a photo (similar to ICU Setup, OT Setup, and Laboratory Setup), using one of the newly added Hospital Furniture images and a descriptive English alt text.",
+      "id": "REQ-25",
+      "text": "Update the site header logo rendering so the uploaded image (1000795148-1.jpg) is displayed in the header (and any other places that reuse the Logo component) instead of the current placeholder logo path (/assets/predicta-logo.png).",
       "target": "frontend",
       "source": {
         "messageIds": [
           "msg-4"
         ],
         "quotes": [
-          "Add some images in hospital furniture sections and Laboratory Setup section"
+          "i want this image in to header"
         ]
       },
       "acceptanceCriteria": [
-        "frontend/src/content/categories.ts includes a photo and photoAlt for the category with id 'furniture'.",
-        "On the Products page category grid, the Hospital Furniture card renders its photo at the top (using the existing CategoryCard behavior) without breaking the layout for the other categories."
+        "On all pages (Home/Products/About/Contact), the header displays the uploaded image as the logo.",
+        "The logo remains clear and properly sized in the header on both mobile and desktop (no overflow or layout break).",
+        "The logo image has appropriate English alt text (e.g., \"Predicta Healthcare logo\")."
       ]
     },
     {
-      "id": "REQ-23",
-      "text": "Add dedicated sections on the Products page for Hospital Furniture and for Laboratory Setup that each display a small responsive gallery (multiple images) using the newly added static assets, keeping styling consistent with existing ICU/OT detail sections and ensuring the layout works on mobile and desktop.",
+      "id": "REQ-26",
+      "text": "Centralize the logo path so the Logo component reads the logo URL from the branding theme configuration (frontend/src/branding/theme.ts), and set that configured logo path to /assets/generated/1000795148-1.jpg.",
       "target": "frontend",
       "source": {
         "messageIds": [
           "msg-4"
         ],
         "quotes": [
-          "Add some images in hospital furniture sections and Laboratory Setup section"
+          "i want this image in to header"
         ]
       },
       "acceptanceCriteria": [
-        "frontend/src/pages/ProductsPage.tsx includes a \"Hospital Furniture\" section containing a responsive image grid/gallery that renders at least 3 Hospital Furniture images from frontend/public/assets/generated.",
-        "frontend/src/pages/ProductsPage.tsx includes a \"Laboratory Setup\" section containing a responsive image grid/gallery that renders at least 2 Laboratory Setup images from frontend/public/assets/generated (in addition to the existing Laboratory Setup category card photo).",
-        "All images rendered in these galleries include meaningful English alt text.",
-        "No images are served from the backend; all new images are referenced via /assets/generated/... paths."
+        "frontend/src/branding/theme.ts exports a logo path that points to /assets/generated/1000795148-1.jpg.",
+        "frontend/src/components/Logo.tsx uses the theme’s exported logo path (not a hardcoded string).",
+        "Header and Footer continue to render the Logo component without errors."
       ]
     }
   ],
   "constraints": [
-    "Do not serve images from the backend; render images only as static frontend assets under frontend/public/assets/generated.",
-    "Do not modify any files under frontend/src/components/ui or other immutable frontend paths listed in SYSTEM_CONTEXT.",
-    "Keep the existing single-actor Motoko backend unchanged (no backend changes required for this request)."
+    "Do not serve images from the backend; use static assets under frontend/public/assets/generated.",
+    "Do not edit files under frontend/src/components/ui or any other paths listed as immutable in SYSTEM_CONTEXT."
   ],
   "nonGoals": [
-    "Do not add new product categories beyond the existing ICU Setup, OT Setup, Hospital Furniture, and Laboratory Setup.",
-    "Do not implement a CMS, admin upload flow, or dynamic image management; this change is static assets + frontend rendering only.",
-    "Do not change existing ICU Setup or OT Setup requirement lists/content as part of this request."
+    "No backend (Motoko) changes.",
+    "No changes to routing/navigation behavior beyond what is required to display the logo image in the header."
   ],
   "imageRequirements": {
-    "required": [
-      "Hospital bed in a clean patient room with side rails and bedside table (hospital-furniture-bedroom.dim_1200x800.jpg)",
-      "Clinical examination room with an examination table and storage cabinets (hospital-furniture-exam-room.dim_1200x800.jpg)",
-      "Medical trolley/cart and modular storage furniture in a hospital corridor setting (hospital-furniture-medical-cart.dim_1200x800.jpg)",
-      "Modern laboratory bench with instruments, shelves, and organized glassware (laboratory-setup-bench.dim_1200x800.jpg)",
-      "Close-up of diagnostic lab analyzer equipment in a bright lab environment (laboratory-setup-analyzer.dim_1200x800.jpg)"
-    ],
+    "required": [],
     "edits": []
   }
 }

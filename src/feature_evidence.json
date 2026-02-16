@@ -2,11 +2,9 @@
   "kind": "feature_evidence_report",
   "features": [
     {
-      "featureId": "feature-add-multiple-new-static-image-assets-for-the-hospital-furniture-category-and-the-laboratory-setup-category-under-frontend-public-assets-generated-and-ensure-each-image-has-appropriate-english-alt-text-available-for-rendering-in-the-ui",
-      "featureTitle": "Add multiple new static image assets for the Hospital Furniture category and the Laboratory Setup category under frontend/public/assets/generated, and ensure each image has appropriate English alt text available for rendering in the UI.",
-      "files": [
-        "frontend/src/content/productGalleries.ts"
-      ],
+      "featureId": "feature-add-the-user-uploaded-image-file-1000795148-1-jpg-to-the-frontend-as-a-static-asset-under-frontend-public-assets-generated-and-ensure-it-is-available-at-runtime-via-the-assets-generated-url-path",
+      "featureTitle": "Add the user-uploaded image file (1000795148-1.jpg) to the frontend as a static asset under frontend/public/assets/generated/ and ensure it is available at runtime via the /assets/generated/ URL path.",
+      "files": [],
       "components": [
         "core-infrastructure@1.0.2",
         "shadcn-ui@1.0.0",
@@ -15,15 +13,15 @@
         "github-export-icp-cli@1.0.0"
       ],
       "testIds": [
-        "REQ-21"
+        "REQ-24"
       ],
       "confidence": "high"
     },
     {
-      "featureId": "feature-update-the-product-categories-data-so-the-hospital-furniture-category-card-displays-a-photo-similar-to-icu-setup-ot-setup-and-laboratory-setup-using-one-of-the-newly-added-hospital-furniture-images-and-a-descriptive-english-alt-text",
-      "featureTitle": "Update the product categories data so the Hospital Furniture category card displays a photo (similar to ICU Setup, OT Setup, and Laboratory Setup), using one of the newly added Hospital Furniture images and a descriptive English alt text.",
+      "featureId": "feature-update-the-site-header-logo-rendering-so-the-uploaded-image-1000795148-1-jpg-is-displayed-in-the-header-and-any-other-places-that-reuse-the-logo-component-instead-of-the-current-placeholder-logo-path-assets-predicta-logo-png",
+      "featureTitle": "Update the site header logo rendering so the uploaded image (1000795148-1.jpg) is displayed in the header (and any other places that reuse the Logo component) instead of the current placeholder logo path (/assets/predicta-logo.png).",
       "files": [
-        "frontend/src/content/categories.ts"
+        "frontend/src/components/Logo.tsx"
       ],
       "components": [
         "core-infrastructure@1.0.2",
@@ -33,16 +31,16 @@
         "github-export-icp-cli@1.0.0"
       ],
       "testIds": [
-        "REQ-22"
+        "REQ-25"
       ],
       "confidence": "high"
     },
     {
-      "featureId": "feature-add-dedicated-sections-on-the-products-page-for-hospital-furniture-and-for-laboratory-setup-that-each-display-a-small-responsive-gallery-multiple-images-using-the-newly-added-static-assets-keeping-styling-consistent-with-existing-icu-ot-detail-sections-and-ensuring-the-layout-works-on-mobile-and-desktop",
-      "featureTitle": "Add dedicated sections on the Products page for Hospital Furniture and for Laboratory Setup that each display a small responsive gallery (multiple images) using the newly added static assets, keeping styling consistent with existing ICU/OT detail sections and ensuring the layout works on mobile and desktop.",
+      "featureId": "feature-centralize-the-logo-path-so-the-logo-component-reads-the-logo-url-from-the-branding-theme-configuration-frontend-src-branding-theme-ts-and-set-that-configured-logo-path-to-assets-generated-1000795148-1-jpg",
+      "featureTitle": "Centralize the logo path so the Logo component reads the logo URL from the branding theme configuration (frontend/src/branding/theme.ts), and set that configured logo path to /assets/generated/1000795148-1.jpg.",
       "files": [
-        "frontend/src/components/ImageGallery.tsx",
-        "frontend/src/pages/ProductsPage.tsx"
+        "frontend/src/branding/theme.ts",
+        "frontend/src/components/Logo.tsx"
       ],
       "components": [
         "core-infrastructure@1.0.2",
@@ -52,7 +50,7 @@
         "github-export-icp-cli@1.0.0"
       ],
       "testIds": [
-        "REQ-23"
+        "REQ-26"
       ],
       "confidence": "high"
     }

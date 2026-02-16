@@ -5,11 +5,11 @@
   "frontend/src/components/Hero.tsx": "Hero section with headline, subheadline, CTA buttons where primary CTA navigates to Contact page using router, and phone CTA remains as tel link.",
   "frontend/src/components/CategoryCard.tsx": "Reusable card component displaying product category with optional photo header, icon, title, and description with hover effects and error handling for both photo and icon images.",
   "frontend/src/components/ContactDetails.tsx": "Contact information component with phone, email, and address in compact or detailed variants with clickable links.",
-  "frontend/src/components/Logo.tsx": "Logo component with image fallback to text-based brand name if logo file is missing.",
+  "frontend/src/components/Logo.tsx": "Logo component that displays the uploaded Predicta Healthcare logo image from the theme configuration with responsive sizing and fallback to text-based brand name if the image fails to load.",
   "frontend/src/components/Section.tsx": "Reusable section wrapper component for consistent spacing and layout across page sections.",
   "frontend/src/content/categories.ts": "Product category data with extended Category interface supporting optional photo and photoAlt fields; all four categories (ICU, OT, Hospital Furniture, Laboratory Setup) now include references to their respective static photos with descriptive alt text.",
   "frontend/src/content/contact.ts": "Centralized contact information (phone, email, address) for consistent display across components.",
-  "frontend/src/branding/theme.ts": "Brand configuration with company name, logo path, and healthcare-appropriate color palette definitions.",
+  "frontend/src/branding/theme.ts": "Brand configuration with company name, logo path pointing to the uploaded Predicta Healthcare logo image, and healthcare-appropriate color palette definitions.",
   "frontend/src/index.css": "Global styles with healthcare-inspired teal/green OKLCH color system for light and dark modes, typography enhancements.",
   "frontend/tailwind.config.js": "Tailwind configuration with extended color tokens, Inter font family, and custom design system values.",
   "frontend/src/lib/router.ts": "Simple client-side router using history API with pushState/popstate for navigation between pages and listener subscription pattern.",
@@ -20,5 +20,6 @@
   "frontend/src/content/icuSetup.ts": "Static content module exporting ICU Setup requirements grouped into three lists (Equipment, Furniture, Wall & Construction) with comprehensive items for each category.",
   "frontend/src/content/otSetup.ts": "Static content module exporting OT Setup requirements list with four items (AHU, ducting wall, OT lights, OT table) for display on the Products page.",
   "frontend/src/content/productGalleries.ts": "Content module exporting Hospital Furniture and Laboratory Setup gallery image entries with static asset paths and descriptive English alt text for consistent use across the UI.",
-  "frontend/src/components/ImageGallery.tsx": "Presentational component that renders a responsive grid of static images with hover effects, error handling, and consistent styling matching the Products page design."
+  "frontend/src/components/ImageGallery.tsx": "Presentational component that renders a responsive grid of static images with hover effects, error handling, and consistent styling matching the Products page design.",
+  "frontend/public/assets/generated/1000795148-1.jpg": "Static asset file containing the Predicta Healthcare logo image with shield design, orange building icon, and teal branding text."
 }

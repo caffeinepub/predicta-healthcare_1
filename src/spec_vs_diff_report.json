@@ -1,27 +1,32 @@
 {
   "kind": "spec_vs_diff_report",
   "version": "1.0",
-  "generatedAt": "2026-02-15T18:54:18.466Z",
-  "summary": "REQ-22 and the content/alt-text portion of REQ-21 appear implemented via updates to categories data and a new content module for galleries. REQ-23 appears implemented by adding an ImageGallery component and wiring new Hospital Furniture and Laboratory Setup gallery sections into ProductsPage. However, the diff summary does not show the required static image files being added under frontend/public/assets/generated with the exact filenames, so the asset-addition part of REQ-21 is not evidenced.",
+  "generatedAt": "2026-02-15T18:58:30.629Z",
+  "summary": "REQ-26 appears implemented by centralizing the logo path in `frontend/src/branding/theme.ts` and consuming it from `frontend/src/components/Logo.tsx` with appropriate alt text and sizing. However, REQ-24 (adding the actual JPG file under `frontend/public/assets/generated/`) is not shown in the diff summary (no added files), so the static asset availability requirement is missing based on provided evidence.",
   "missing_requirements": [
     {
-      "id": "REQ-21",
-      "requirement": "Add multiple new static image assets for Hospital Furniture and Laboratory Setup under frontend/public/assets/generated using the exact specified filenames.",
-      "reason": "The diff summary includes new TS/TSX files that reference the images, but it does not show any new .jpg assets added under frontend/public/assets/generated. Without those files being added, the acceptance criterion about adding the exact filenames is not demonstrated.",
+      "id": "REQ-24",
+      "requirement": "Add the user-uploaded image file (1000795148-1.jpg) under frontend/public/assets/generated/ and ensure it is available at runtime via /assets/generated/1000795148-1.jpg.",
+      "reason": "The diff summary shows no added files, and there is no evidence that `frontend/public/assets/generated/1000795148-1.jpg` was added to the repo.",
       "evidence": [
-        "frontend/src/content/productGalleries.ts (references /assets/generated/hospital-furniture-*.jpg and /assets/generated/laboratory-setup-*.jpg)",
-        "frontend/src/content/categories.ts (references /assets/generated/hospital-furniture-bedroom.dim_1200x800.jpg and /assets/generated/laboratory-setup-bench.dim_1200x800.jpg)"
+        "File diff summary: \"Added: 0\" / \"ADDED FILES: - none\""
       ]
     }
   ],
-  "hallucinated_features": [],
-  "confidence": 0.72,
+  "hallucinated_features": [
+    {
+      "description": "Logo image load error handling with React state and a fallback text/initials logo when the image fails to load.",
+      "reason": "The BuildRequest only asks to display the uploaded logo and centralize the path; it does not request implementing an onError fallback UI for the logo.",
+      "evidence": [
+        "frontend/src/components/Logo.tsx"
+      ]
+    }
+  ],
+  "confidence": 0.74,
   "changed_files": [
     "frontend-file-summaries.txt",
-    "frontend/src/components/ImageGallery.tsx",
-    "frontend/src/content/categories.ts",
-    "frontend/src/content/productGalleries.ts",
-    "frontend/src/pages/ProductsPage.tsx",
+    "frontend/src/branding/theme.ts",
+    "frontend/src/components/Logo.tsx",
     "project_state.json"
   ]
 }

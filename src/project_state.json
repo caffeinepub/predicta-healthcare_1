@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "projectStateVersion": 15,
+  "projectStateVersion": 17,
   "summary": "Build a multi-page marketing website for \"Predicta Healthcare\" (healthcare products focused on ICU/OT setup and hospital furniture), using the logo and matching its colors, and displaying provided contact details.",
   "architectural_notes": [
     "Website should use the provided logo and match its color palette across the UI.",
@@ -16,7 +16,6 @@
     "Build/deploy is currently blocked by internal/system configuration errors encountered during attempted rebuilds."
   ],
   "isFixRequest": false,
-  "imageRequirements": "## Required Images\n- Hospital bed in a clean patient room with side rails and bedside table (hospital-furniture-bedroom.dim_1200x800.jpg)\n- Clinical examination room with an examination table and storage cabinets (hospital-furniture-exam-room.dim_1200x800.jpg)\n- Medical trolley/cart and modular storage furniture in a hospital corridor setting (hospital-furniture-medical-cart.dim_1200x800.jpg)\n- Modern laboratory bench with instruments, shelves, and organized glassware (laboratory-setup-bench.dim_1200x800.jpg)\n- Close-up of diagnostic lab analyzer equipment in a bright lab environment (laboratory-setup-analyzer.dim_1200x800.jpg)",
   "existing_features": [
     {
       "id": "feature-create-a-responsive-marketing-website-for-the-brand-name-predicta-healthcare-focused-on-healthcare-products-especially-icu-ot-setup-and-hospital-furniture",
@@ -193,6 +192,30 @@
         "REQ-23"
       ],
       "version": 1
+    },
+    {
+      "id": "feature-add-the-user-uploaded-image-file-1000795148-1-jpg-to-the-frontend-as-a-static-asset-under-frontend-public-assets-generated-and-ensure-it-is-available-at-runtime-via-the-assets-generated-url-path",
+      "title": "Add the user-uploaded image file (1000795148-1.jpg) to the frontend as a static asset under frontend/public/assets/generated/ and ensure it is available at runtime via the /assets/generated/ URL path.",
+      "reqIds": [
+        "REQ-24"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-site-header-logo-rendering-so-the-uploaded-image-1000795148-1-jpg-is-displayed-in-the-header-and-any-other-places-that-reuse-the-logo-component-instead-of-the-current-placeholder-logo-path-assets-predicta-logo-png",
+      "title": "Update the site header logo rendering so the uploaded image (1000795148-1.jpg) is displayed in the header (and any other places that reuse the Logo component) instead of the current placeholder logo path (/assets/predicta-logo.png).",
+      "reqIds": [
+        "REQ-25"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-centralize-the-logo-path-so-the-logo-component-reads-the-logo-url-from-the-branding-theme-configuration-frontend-src-branding-theme-ts-and-set-that-configured-logo-path-to-assets-generated-1000795148-1-jpg",
+      "title": "Centralize the logo path so the Logo component reads the logo URL from the branding theme configuration (frontend/src/branding/theme.ts), and set that configured logo path to /assets/generated/1000795148-1.jpg.",
+      "reqIds": [
+        "REQ-26"
+      ],
+      "version": 1
     }
   ],
   "new_feature_requests": [
@@ -255,6 +278,12 @@
     {
       "id": "AR-10",
       "summary": "Add multiple images to the Hospital Furniture section(s) and the Laboratory Setup section (beyond the single category photo), e.g., additional section images/gallery content.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-11",
+      "summary": "Add the user-referenced image to the website header (e.g., as a header/banner or within the header area).",
       "reqIds": [],
       "status": "pending"
     }

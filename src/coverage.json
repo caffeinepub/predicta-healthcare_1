@@ -1,7 +1,7 @@
 {
   "kind": "coverage_report",
   "version": "1.0",
-  "generatedAt": "2026-02-15T18:54:18.469Z",
+  "generatedAt": "2026-02-15T18:58:30.632Z",
   "sources": {
     "buildRequest": true,
     "implementationPlan": true
@@ -11,48 +11,38 @@
     "implemented": 3,
     "items": [
       {
-        "id": "REQ-21",
-        "summary": "Add multiple new static image assets for the Hospital Furniture category and the Laboratory Setup category under frontend/public/assets/generated, and ensure each image has appropriate English alt text available for rendering in the UI.",
+        "id": "REQ-24",
+        "summary": "Add the user-uploaded image file (1000795148-1.jpg) to the frontend as a static asset under frontend/public/assets/generated/ and ensure it is available at runtime via the /assets/generated/ URL path.",
         "status": "implemented",
         "plannedFiles": [
-          "frontend/public/assets/generated/hospital-furniture-bedroom.dim_1200x800.jpg",
-          "frontend/public/assets/generated/hospital-furniture-exam-room.dim_1200x800.jpg",
-          "frontend/public/assets/generated/hospital-furniture-medical-cart.dim_1200x800.jpg",
-          "frontend/public/assets/generated/laboratory-setup-bench.dim_1200x800.jpg",
-          "frontend/public/assets/generated/laboratory-setup-analyzer.dim_1200x800.jpg",
-          "frontend/src/content/productGalleries.ts"
+          "frontend/public/assets/generated/1000795148-1.jpg"
         ],
         "matchedFiles": [
-          "frontend/public/assets/generated/hospital-furniture-bedroom.dim_1200x800.jpg",
-          "frontend/public/assets/generated/hospital-furniture-exam-room.dim_1200x800.jpg",
-          "frontend/public/assets/generated/hospital-furniture-medical-cart.dim_1200x800.jpg",
-          "frontend/public/assets/generated/laboratory-setup-bench.dim_1200x800.jpg",
-          "frontend/public/assets/generated/laboratory-setup-analyzer.dim_1200x800.jpg",
-          "frontend/src/content/productGalleries.ts"
+          "frontend/public/assets/generated/1000795148-1.jpg"
         ]
       },
       {
-        "id": "REQ-22",
-        "summary": "Update the product categories data so the Hospital Furniture category card displays a photo (similar to ICU Setup, OT Setup, and Laboratory Setup), using one of the newly added Hospital Furniture images and a descriptive English alt text.",
+        "id": "REQ-25",
+        "summary": "Update the site header logo rendering so the uploaded image (1000795148-1.jpg) is displayed in the header (and any other places that reuse the Logo component) instead of the current placeholder logo path (/assets/predicta-logo.png).",
         "status": "implemented",
         "plannedFiles": [
-          "frontend/src/content/categories.ts"
+          "frontend/src/components/Logo.tsx"
         ],
         "matchedFiles": [
-          "frontend/src/content/categories.ts"
+          "frontend/src/components/Logo.tsx"
         ]
       },
       {
-        "id": "REQ-23",
-        "summary": "Add dedicated sections on the Products page for Hospital Furniture and for Laboratory Setup that each display a small responsive gallery (multiple images) using the newly added static assets, keeping styling consistent with existing ICU/OT detail sections and ensuring the layout works on mobile and desktop.",
+        "id": "REQ-26",
+        "summary": "Centralize the logo path so the Logo component reads the logo URL from the branding theme configuration (frontend/src/branding/theme.ts), and set that configured logo path to /assets/generated/1000795148-1.jpg.",
         "status": "implemented",
         "plannedFiles": [
-          "frontend/src/components/ImageGallery.tsx",
-          "frontend/src/pages/ProductsPage.tsx"
+          "frontend/src/branding/theme.ts",
+          "frontend/src/components/Logo.tsx"
         ],
         "matchedFiles": [
-          "frontend/src/components/ImageGallery.tsx",
-          "frontend/src/pages/ProductsPage.tsx"
+          "frontend/src/branding/theme.ts",
+          "frontend/src/components/Logo.tsx"
         ]
       }
     ]
@@ -62,15 +52,9 @@
     "feature_evidence.json",
     "frontend-file-summaries.txt",
     "frontend-implementation-plan.json",
-    "frontend/public/assets/generated/hospital-furniture-bedroom.dim_1200x800.jpg",
-    "frontend/public/assets/generated/hospital-furniture-exam-room.dim_1200x800.jpg",
-    "frontend/public/assets/generated/hospital-furniture-medical-cart.dim_1200x800.jpg",
-    "frontend/public/assets/generated/laboratory-setup-analyzer.dim_1200x800.jpg",
-    "frontend/public/assets/generated/laboratory-setup-bench.dim_1200x800.jpg",
-    "frontend/src/components/ImageGallery.tsx",
-    "frontend/src/content/categories.ts",
-    "frontend/src/content/productGalleries.ts",
-    "frontend/src/pages/ProductsPage.tsx",
+    "frontend/public/assets/generated/1000795148-1.jpg",
+    "frontend/src/branding/theme.ts",
+    "frontend/src/components/Logo.tsx",
     "project_state.json",
     "scratch/component-selection.json",
     "spec.md",

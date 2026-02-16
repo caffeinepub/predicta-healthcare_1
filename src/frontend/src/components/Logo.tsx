@@ -1,17 +1,16 @@
 import { useState } from 'react';
-import { BRAND_NAME } from '../branding/theme';
+import { BRAND_NAME, LOGO_PATH } from '../branding/theme';
 
 export default function Logo() {
   const [logoError, setLogoError] = useState(false);
-  const logoPath = '/assets/predicta-logo.png';
 
   return (
     <div className="flex items-center gap-3">
       {!logoError ? (
         <img
-          src={logoPath}
-          alt={BRAND_NAME}
-          className="h-10 w-auto"
+          src={LOGO_PATH}
+          alt="Predicta Healthcare logo"
+          className="h-12 w-auto object-contain"
           onError={() => setLogoError(true)}
         />
       ) : (
